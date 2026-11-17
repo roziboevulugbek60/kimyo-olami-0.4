@@ -1,0 +1,385 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080d1d;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(130px);
+    opacity: .3;
+    z-index: -1;
+}
+
+body::before {
+    background: #523bff;
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    background: #00d9ff;
+    bottom: -100px;
+    right: -100px;
+}
+
+header {
+    padding: 20px 7%;
+    background: #111b34;
+    border-bottom: 1px solid #344568;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #00e5ff;
+}
+
+.score {
+    padding: 12px 20px;
+    background: #202e4e;
+    border-radius: 12px;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 15px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    width: 100%;
+    animation: appear .5s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    text-align: center;
+}
+
+.atom {
+    font-size: 110px;
+    color: #00e5ff;
+    filter: drop-shadow(0 0 25px #00d9ff);
+    animation: spin 7s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+.hero h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #00e5ff;
+}
+
+.hero p {
+    color: #aabbdc;
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: .25s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+.main-btn {
+    background: linear-gradient(135deg, #00e5ff, #625cff);
+    padding: 16px 28px;
+    border-radius: 13px;
+    color: #071426;
+    font-size: 15px;
+    box-shadow: 0 5px 25px #00d9ff40;
+}
+
+.game-card {
+    background: #121d38;
+    border: 1px solid #3b507d;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 20px 60px #0006;
+    text-align: center;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+    background: #2c3a5c;
+    border-radius: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #00e5ff, #7162ff);
+    transition: .3s;
+}
+
+.game-card h2 {
+    margin: 25px 0;
+    font-size: 25px;
+}
+
+.task {
+    padding: 25px 15px;
+    background: #1b294a;
+    border: 1px solid #3c5688;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+.task p {
+    color: #bdcce5;
+    line-height: 1.6;
+}
+
+.reactants {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0 12px;
+}
+
+.reactant {
+    background: linear-gradient(145deg, #126c94, #242b70);
+    border: 1px solid #00d9ff;
+    border-radius: 13px;
+    padding: 15px 22px;
+    font-size: 27px;
+    font-weight: bold;
+    box-shadow: 0 0 20px #00d9ff30;
+}
+
+.plus {
+    font-size: 25px;
+    color: #00e5ff;
+}
+
+.arrow {
+    color: #00e5ff;
+    font-size: 25px;
+    margin: 12px;
+}
+
+.product {
+    background: #101a31;
+    border: 1px dashed #00e5ff;
+    border-radius: 15px;
+    padding: 15px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.product span {
+    color: #8ba8d6;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+#builtFormula {
+    font-size: 35px;
+    color: #00e5ff;
+    font-weight: bold;
+    min-height: 45px;
+    margin-top: 10px;
+    overflow-wrap: anywhere;
+}
+
+.game-card h3 {
+    margin: 25px 0 15px;
+    color: #b6c9eb;
+}
+
+.elements {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.element-btn {
+    padding: 17px 5px;
+    background: linear-gradient(145deg, #263c68, #172343);
+    border: 1px solid #48648f;
+    border-radius: 12px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.element-btn:hover {
+    border-color: #00e5ff;
+    background: #30517f;
+}
+
+.element-btn small {
+    display: block;
+    font-size: 10px;
+    color: #9eb9e5;
+    margin-top: 5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.clear-btn,
+.check-btn {
+    padding: 14px 20px;
+    border-radius: 11px;
+    color: white;
+    background: #35486d;
+}
+
+.check-btn {
+    background: linear-gradient(135deg, #087eaa, #3155cb);
+}
+
+#feedback {
+    min-height: 35px;
+    margin: 20px 0;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+#nextBtn {
+    margin: 10px auto;
+}
+
+.result-card {
+    background: #14203e;
+    border: 1px solid #405989;
+    border-radius: 24px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.trophy {
+    font-size: 90px;
+}
+
+.result-card h1 {
+    margin: 20px 0;
+}
+
+.result-card h2 {
+    font-size: 55px;
+    color: #00e5ff;
+    margin: 20px;
+}
+
+.result-card p {
+    color: #b9c9e5;
+    margin: 15px;
+}
+
+.result-card .clear-btn {
+    display: block;
+    margin: 20px auto;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: #8192b6;
+}
+
+@media(max-width: 550px) {
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .score {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .game-card {
+        padding: 18px 12px;
+    }
+
+    .elements {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .element-btn {
+        font-size: 19px;
+        padding: 15px 3px;
+    }
+
+    .reactant {
+        font-size: 22px;
+        padding: 12px;
+    }
+}
